@@ -1,5 +1,22 @@
 <?php
 
-namespace Core;
+return $routes =
+    [
+        "GET"=>[
+            "/api/products"=>['path'=>'core/Controllers/products.php'],
 
-return 
+        ],
+        "POST"=>[
+            "/api/products"=>['path'=>'core/Controllers/CreateProducts.php'],
+        ],
+        "PUT"=>[
+
+        ],
+        "DELETE"=>[
+
+        ],
+        "PATCH"=>[
+            
+        ],
+
+    ];

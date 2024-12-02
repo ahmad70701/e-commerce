@@ -1,7 +1,13 @@
 <?php
+const BASE_PATH = __DIR__.'/../';
+require BASE_PATH.'/core/UtilitiesFunctions.php';
+require base_path('/core/Router.php');
+require base_path('/routes.php');
 
-include '../core/index.php';
+$router = new Router();
+$router->addRoutes($routes);
 
-echo "<pre>";
-print_r($_SERVER);
-echo "</pre>";
+$requestInfo = getRequestInfo();
+echo $router->route($requestInfo);
+
+

@@ -10,10 +10,8 @@ function dd($value)
 
     die();
 }
-
-function urlIs($value)
-{
-    return $_SERVER['REQUEST_URI'] === $value;
+function getRequestQuery(){
+    return $_SERVER['QUERY_STRING'];
 }
 
 function abort($code = 404)
@@ -52,7 +50,21 @@ function redirect($path)
     exit();
 }
 
-function old($key, $default = '')
-{
-    return Core\Session::get('old')[$key] ?? $default;
+
+function responseBuilder($httpCode,$response){
+    http_response_code($httpCode);
+    header('Content-Type: application/json');
+    return json_encode($response);
+}
+
+function getRequestInfo(){
+    return [
+        'path' => $_SERVER['PATH_INFO'] ?? '/',
+        'method' => $_SERVER['REQUEST_METHOD'] ?? '',
+        'query' => $_SERVER['QUERY_STRING']??''
+    ];
+}
+function getRequestMethod(){
+    return parse_url($_SERVER['PATH_INFO']);
+
 }
