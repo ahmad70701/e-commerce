@@ -40,13 +40,12 @@ class Router{
             if($request['uri']===$route['uri'] && $request['method']==$route['method']){
                 if($route['middleware']){
                     global $middleware;
-                    // $middleware->handleMiddleware($route['middleware']);
+                    $middleware->handleMiddleware($route['middleware']);
                 }
                 return require base_path('/core/Controllers/'. $route['handler']);
             }
         }
-        // return responseBuilder('404', ['message'=>'endpoint does not exist']);
+        return responseBuilder('404', ['message'=>'endpoint does not exist']);
     }
 }
-
 

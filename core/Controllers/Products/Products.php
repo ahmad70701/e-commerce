@@ -1,9 +1,12 @@
 <?php
 global $database;
-$collection = $database->selectCollection('comments');
+$collection = $database->selectCollection('products')->find([]);
+$responseData = ['data' => [],'errors'=>['server'=>[],'validation'=>[]]];
 
 $data = [];
-foreach($collection->find([]) as $row){
-    array_push($data, $row);
-}
-return responseBuilder('200', $data);
+if($collection){
+    foreach($collection as $row){
+        array_push($responseData['data'], $row);
+    }
+}  
+return responseBuilder('200', $responseData);
