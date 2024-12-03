@@ -1,5 +1,6 @@
 <?php
 
+
 class Middleware{
     protected $middlewares = [
         'auth'=>'/core/Middleware/AuthMiddleware.php',

@@ -1,0 +1,18 @@
+{
+    "name": "ahmad/e_commerce_demo",
+    "type": "project",
+    "require": {
+        "mongodb/mongodb": "^1.20"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core\\":"Core/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ahmad70701",
+            "email": "ahmedaman7070@gmail.com"
+        }
+    ]
+}
