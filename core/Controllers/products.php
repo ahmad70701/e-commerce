@@ -1,8 +1,8 @@
 <?php
 $data = [
-    'product1'=>"dildo",
-    'product2'=>"dildoese",
-    'product3'=>"dildoes",
+    'product1'=>"d",
+    'product2'=>"l",
+    'product3'=>"k",
 ];
 
 

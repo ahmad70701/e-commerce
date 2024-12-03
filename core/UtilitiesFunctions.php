@@ -59,7 +59,7 @@ function responseBuilder($httpCode,$response){
 
 function getRequestInfo(){
     return [
-        'path' => $_SERVER['PATH_INFO'] ?? '/',
+        'uri' => $_SERVER['PATH_INFO'] ?? '/',
         'method' => $_SERVER['REQUEST_METHOD'] ?? '',
         'query' => $_SERVER['QUERY_STRING']??''
     ];
